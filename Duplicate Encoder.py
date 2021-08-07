@@ -3,13 +3,20 @@
 # if that character appears more than once in the original string.
 # Ignore capitalization when determining if a character is a duplicate.
 
-def duplicate_encode(word):
+"""def duplicate_encode(word):
     new_string=""
     for i in word.lower():
         if word.lower().count(i)>1:
             new_string+=')'
         else:
             new_string+='('
+    return new_string"""
+
+# OR
+
+def duplicate_encode(word):
+    new_list= [")" if word.lower().count(i)>1 else '(' for i in word.lower()]
+    new_string = "".join(list(map(str, new_list)))
     return new_string
 
 print(duplicate_encode("din")) #  "((("
